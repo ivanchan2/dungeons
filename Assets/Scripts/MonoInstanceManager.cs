@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Org.Ivan.Dungeons
 {
     /// <summary>
-    /// 
+    /// 管理自動產生的mono instance
     /// </summary>
     public class MonoInstanceManager
     {
