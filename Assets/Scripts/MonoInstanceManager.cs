@@ -6,6 +6,7 @@ namespace Org.Ivan.Dungeons
 {
     /// <summary>
     /// 管理自動產生的mono instance
+    /// 會在scene裡面生成<seealso cref="GameManagerMono"/>
     /// </summary>
     public class MonoInstanceManager
     {
