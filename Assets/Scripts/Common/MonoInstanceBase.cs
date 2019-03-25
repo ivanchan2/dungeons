@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Org.Ivan.Dungeons.Commmon;
 
 namespace Org.Ivan.Dungeons.Commmon
 {
+    /// <summary>
+    /// 基礎的MonoInstace物件
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class MonoInstanceBase<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T _instance;

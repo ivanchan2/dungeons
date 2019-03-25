@@ -5,51 +5,46 @@ using UnityEngine;
 namespace Org.Ivan.Dungeons.Commmon
 {
     /// <summary>
-    /// 管理自動產生的mono instance
-    /// 會在scene裡面生成<seealso cref="MonoInstanceObject"/>
+    /// 管理自動產生的<seealso cref="MonoInstanceBase{T}"/>
     /// </summary>
-    public class MonoInstanceManager
+    public class MonoInstanceManager : MonoBehaviour
     {
+        // instance
         private static MonoInstanceManager _instance;
-        private static GameObject _gameObject;
-
+        // private constructor
         private MonoInstanceManager() { }
 
+        /// <summary>
+        /// Instance
+        /// </summary>
         public static MonoInstanceManager Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new MonoInstanceManager();
-
-                    // 建立GameManagerObject
-                    _gameObject = GameObject.Find(nameof(MonoInstanceObject));
-                    if (_gameObject == null)
-                    {
-                        _gameObject = new GameObject(nameof(MonoInstanceObject));
-                        Object.Instantiate(_gameObject);
-
-                        // Object.DontDestroyOnLoad(_gameObject);
-                    }
+                    GameObject gameObject = new GameObject(nameof(MonoInstanceManager), typeof(MonoInstanceManager));
+                    Object.DontDestroyOnLoad(gameObject);
+                    _instance = gameObject.GetComponent<MonoInstanceManager>();
                 }
 
                 return _instance;
             }
         }
 
-        public T AddInstance<T>() where T : MonoBehaviour
+        void Start()
         {
-            if (_gameObject == null)
-            {
-                Debug.LogError("Can't find GameObject of MonoInstanceManager");
-                return null;
-            }
+        }
 
+        /// <summary>
+        /// 新增一個MonoInstance
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public T AddInstance<T>()
+        {
             GameObject gameObject = new GameObject(typeof(T).Name, typeof(T));
-            gameObject.transform.parent = _gameObject.transform;
-
-            Object.DontDestroyOnLoad(gameObject);
+            gameObject.transform.parent = _instance.gameObject.transform;
 
             return gameObject.GetComponent<T>();
         }

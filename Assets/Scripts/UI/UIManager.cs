@@ -8,6 +8,11 @@ using Org.Ivan.Dungeons.Commmon;
 /// </summary>
 public class UIManager : MonoInstanceBase<UIManager>
 {
+    void Start()
+    {
+
+    }
+    
     public void Initial() 
     {
     }

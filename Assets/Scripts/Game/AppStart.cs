@@ -20,8 +20,6 @@ public class AppStart : MonoBehaviour
 
         SceneManager.LoadScene("2_DebugSetting");
 #endif
-
-        UIManager.Instance.Initial();
     }
 
     // Update is called once per frame
