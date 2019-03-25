@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Org.Ivan.Dungeons;
+using Org.Ivan.Dungeons.Commmon;
 
 public class AppStart : MonoBehaviour
 {
@@ -20,6 +20,8 @@ public class AppStart : MonoBehaviour
 
         SceneManager.LoadScene("2_DebugSetting");
 #endif
+
+        UIManager.Instance.Initial();
     }
 
     // Update is called once per frame
