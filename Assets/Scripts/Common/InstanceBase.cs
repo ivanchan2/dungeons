@@ -2,19 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class InstanceBase<T> where T : new()
+namespace Org.Ivan.Dungeons.Commmon
 {
-    private T _instance;
-
-    public T Instance 
+    /// <summary>
+    /// Singleton基礎類別
+    /// </summary>
+    /// <typeparam name="T">要建立的物件類別</typeparam>
+    public class InstanceBase<T> where T : InstanceBase<T>, new()
     {
-        get 
-        {
-            if (_instance == null)
-                _instance = new T();
+        /// <summary>
+        /// instance
+        /// </summary>
+        private static T _instance;
 
-            return _instance;
+        /// <summary>
+        /// instance
+        /// </summary>
+        public static T Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new T();
+
+                return _instance;
+            }
+        }
+
+        private static
+
+        protected void Initial()
+        {
+
         }
     }
 }

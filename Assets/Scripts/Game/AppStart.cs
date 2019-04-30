@@ -11,6 +11,8 @@ public class AppStart : MonoBehaviour
     {
         MonoInstanceManager.Instance.Initial();
 
+        CharacterManager.Instance.DebugAddCharacter();
+
 #if DEBUG
         Debug.Log("Debug Start.");
 

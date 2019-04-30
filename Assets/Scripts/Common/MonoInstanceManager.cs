@@ -11,6 +11,7 @@ namespace Org.Ivan.Dungeons.Commmon
     {
         // instance
         private static MonoInstanceManager _instance;
+        
         // private constructor
         private MonoInstanceManager() { }
 

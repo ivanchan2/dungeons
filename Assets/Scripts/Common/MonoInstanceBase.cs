@@ -18,7 +18,7 @@ namespace Org.Ivan.Dungeons.Commmon
             {
                 if (_instance == null)
                 {
-                    _instance = MonoInstanceManager.Instance.AddInstance<T>() as T;
+                    _instance = MonoInstanceManager.Instance.AddInstance<T>();
                 }
 
                 return _instance;
