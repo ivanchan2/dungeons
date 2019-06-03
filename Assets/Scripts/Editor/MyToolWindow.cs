@@ -54,6 +54,7 @@ public class MyToolWindow : EditorWindow
                     EditorSceneManager.OpenScene( _previousScenePath);
 
                     _previousScenePath = "";
+                    
                 }
             }
         }
