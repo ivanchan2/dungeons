@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Org.Ivan.Dungeons.Commmon;
 
+/// <summary>
+/// 開始場景使用的script
+/// </summary>
 public class AppStart : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        MonoInstanceManager.Instance.Initial();
-
-        CharacterManager.Instance.DebugAddCharacter();
+        App.Instance.Initial();
 
 #if DEBUG
         Debug.Log("Debug Start.");

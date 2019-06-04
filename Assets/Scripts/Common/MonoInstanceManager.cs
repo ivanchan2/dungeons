@@ -9,6 +9,7 @@ namespace Org.Ivan.Dungeons.Commmon
     /// </summary>
     public class MonoInstanceManager : MonoBehaviour
     {
+        #region Singleton
         // instance
         private static MonoInstanceManager _instance;
         
@@ -32,10 +33,7 @@ namespace Org.Ivan.Dungeons.Commmon
                 return _instance;
             }
         }
-
-        void Start()
-        {
-        }
+        #endregion
 
         /// <summary>
         /// 新增一個MonoInstance

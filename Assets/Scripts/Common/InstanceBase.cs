@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Org.Ivan.Dungeons.Commmon
 {
@@ -23,17 +24,15 @@ namespace Org.Ivan.Dungeons.Commmon
             get
             {
                 if (_instance == null)
-                    _instance = new T();
+                    _instance = InstanceManager.Instance.AddInstance<T>();
 
                 return _instance;
             }
         }
 
-        private static
-
-        protected void Initial()
+        [Obsolete("本來想在new完之後互叫此functio, 但是測試的結果在那時候好像沒有多型的效果 ")]
+        public virtual void Initial()
         {
-
         }
     }
 }
