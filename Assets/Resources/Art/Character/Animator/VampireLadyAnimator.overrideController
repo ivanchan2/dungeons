@@ -7,5 +7,9 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: VampireLadyAnimator
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: f43b4711528884fd79ae0f74b802b852, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e292e9bf4d4a6441ab6930041dd68365, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b9737d3fb5d4645d0ac6a6dc42c4d065, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 56036dce8dcdb45dfaea467c878f113f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b9737d3fb5d4645d0ac6a6dc42c4d065, type: 2}
